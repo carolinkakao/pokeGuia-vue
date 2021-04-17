@@ -26,7 +26,7 @@
         <div class="col-12">
           <h2>Movimientos</h2>
           <ul>
-            <li v-for="(move, i) in pokeData.moves" :key="i">
+            <li v-for="(move, i) in traerMovimientos" :key="i">
               {{move.move.name}}
             </li>
           </ul>
@@ -34,7 +34,7 @@
         <div class="col-12">
           <h2>Habilidades</h2>
           <ul>
-            <li v-for="(ability, i) in pokeData.abilities" :key="i">
+            <li v-for="(ability, i) in traerHabilidades" :key="i">
               {{ability.ability.name}}
             </li>
           </ul>
@@ -77,6 +77,12 @@ export default {
       
         traerImagen(){
             return this.imagen  /*siempre retorna algo*/
+        },
+        traerHabilidades(){
+          return this.pokeData.abilities
+        },
+        traerMovimientos(){
+          return this.pokeData.moves
         }
         }
 };
